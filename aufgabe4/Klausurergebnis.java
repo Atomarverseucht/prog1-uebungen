@@ -45,6 +45,8 @@ public final class Klausurergebnis {
         double bestandenNote = 0.0;
         double besteNote = 5.0;
         double schlechtesteNote = 1.0;
+        final int X = 10;
+        final int C = 100;
         //--------------------------------------------------- Noten einlesen
         System.out.println("Noten Ganze,Zehntel oder Ganze.Zehntel eingeben "
             + "(Ende mit Strg-D/Strg-Z):");
@@ -53,10 +55,10 @@ public final class Klausurergebnis {
             String note = EINGABE.next();
             try {
                 Double nDouble = Noten.toDouble(note);
-                if(!Noten.istZulaessig(note)){
+                if (!Noten.istZulaessig(note)) {
                     throw new IllegalArgumentException();
                 }
-                if(Noten.istBestanden(nDouble)){
+                if (Noten.istBestanden(nDouble)) {
                     anzahlBestanden++;
                     bestandenNote += nDouble;
                 }
@@ -64,10 +66,10 @@ public final class Klausurergebnis {
                 besteNote = Noten.bessere(nDouble, besteNote);
                 schlechtesteNote = Noten.schlechtere(schlechtesteNote, nDouble);
             } catch (IllegalArgumentException eae) {
-                System.out.println("Unzulaessige Note: " + note + " wird ignoriert!");
+                System.out.println("Unzulaessige Note: " + note
+                    + " wird ignoriert!");
             }
         }
-
         
         System.out.println("\nAnzahl beruecksichtigter Noten: " + anzahlNoten);
         System.out.println("Anzahl bestandener Noten: " + anzahlBestanden);
@@ -76,10 +78,10 @@ public final class Klausurergebnis {
                     "%.1f", besteNote).replace(".", ","));
             System.out.println("Durchschnitt bestandener Noten: "
                 + String.format("%.1f", (double)
-                    Math.round(bestandenNote * 10 / anzahlBestanden) / 10));
+                    Math.round(bestandenNote * X / anzahlBestanden) / X));
             System.out.println("Durchfallquote: " + String.format(
                 "%.1f", ((double) (anzahlNoten - anzahlBestanden)
-                    * 100 / anzahlNoten)) + "%");
+                    * C / anzahlNoten)) + "%");
         }
     }
 }
