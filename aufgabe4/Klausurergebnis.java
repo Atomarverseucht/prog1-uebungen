@@ -47,39 +47,40 @@ public final class Klausurergebnis {
         double schlechtesteNote = 1.0;
         //--------------------------------------------------- Noten einlesen
         System.out.println("Noten Ganze,Zehntel oder Ganze.Zehntel eingeben "
-                           + "(Ende mit Strg-D/Strg-Z):");
+            + "(Ende mit Strg-D/Strg-Z):");
 
         while (EINGABE.hasNext()) {
             String note = EINGABE.next();
             try {
+                Double nDouble = Noten.toDouble(note);
                 if(!Noten.istZulaessig(note)){
                     throw new IllegalArgumentException();
                 }
-                if(Noten.istBestanden(Noten.toDouble(note))){
+                if(Noten.istBestanden(nDouble)){
                     anzahlBestanden++;
+                    bestandenNote += nDouble;
                 }
                 anzahlNoten++;
+                besteNote = Noten.bessere(nDouble, besteNote);
+                schlechtesteNote = Noten.schlechtere(schlechtesteNote, nDouble);
             } catch (IllegalArgumentException eae) {
                 System.out.println("Unzulaessige Note: " + note + " wird ignoriert!");
             }
-            //---------------------------------------------- Eingabe pruefen
-            
+        }
 
-            //------------------------------------------------ Note erfassen
-
-            /* TODO: (2) Notensumme Bestandene, Anzahl Bestandene,
-                         Anzahl Durchgefallene sowie
-                         beste und schlechteste Note aktualisieren ... */
-
-
-        } // while
-
-        //------------------------------------------ Notenstatistik ausgeben
-
-        /* TODO: (3) Durchschnitt und Durchfallquote berechnen
-                     und dann die gesamte Statistik ausgeben ... */
-
-
-    } // main
+        
+        System.out.println("\nAnzahl beruecksichtigter Noten: " + anzahlNoten);
+        System.out.println("Anzahl bestandener Noten: " + anzahlBestanden);
+        if (anzahlNoten != 0) {
+            System.out.println("Beste Note: " + String.format(
+                    "%.1f", besteNote).replace(".", ","));
+            System.out.println("Durchschnitt bestandener Noten: "
+                + String.format("%.1f", (double)
+                    Math.round(bestandenNote * 10 / anzahlBestanden) / 10));
+            System.out.println("Durchfallquote: " + String.format(
+                "%.1f", ((double) (anzahlNoten - anzahlBestanden)
+                    * 100 / anzahlNoten)) + "%");
+        }
+    }
 }
 
