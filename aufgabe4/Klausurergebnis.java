@@ -35,6 +35,16 @@ public final class Klausurergebnis {
     private static final Scanner EINGABE = new Scanner(System.in);
 
     /**
+    * einfach nur 10.
+    */
+    static final int X = 10;
+
+    /**
+    * 1 in Prozent.
+    */
+    static final int C = 100;
+
+    /**
      * main ist der Startpunkt des Programms.
      * @param args wird nicht verwendet.
      */
@@ -43,10 +53,9 @@ public final class Klausurergebnis {
         int anzahlBestanden = 0;
         int anzahlNoten = 0;
         double bestandenNote = 0.0;
-        double besteNote = 5.0;
+        double besteNote = Noten.SCHLECHTESTE;
         double schlechtesteNote = 1.0;
-        final int X = 10;
-        final int C = 100;
+
         //--------------------------------------------------- Noten einlesen
         System.out.println("Noten Ganze,Zehntel oder Ganze.Zehntel eingeben "
             + "(Ende mit Strg-D/Strg-Z):");
@@ -70,7 +79,7 @@ public final class Klausurergebnis {
                     + " wird ignoriert!");
             }
         }
-        
+
         System.out.println("\nAnzahl beruecksichtigter Noten: " + anzahlNoten);
         System.out.println("Anzahl bestandener Noten: " + anzahlBestanden);
         if (anzahlNoten != 0) {
