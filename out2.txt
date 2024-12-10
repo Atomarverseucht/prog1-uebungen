@@ -1,6 +1,6 @@
 Noten Ganze,Zehntel oder Ganze.Zehntel eingeben (Ende mit Strg-D/Strg-Z):
-Note 2,3 wird wegen Nachkommastelle ignoriert!
-Note 2.3 wird wegen Nachkommastelle ignoriert!
+Unzulaessige Note: 2,3 wird ignoriert!
+Unzulaessige Note: 2.3 wird ignoriert!
 
 Anzahl beruecksichtigter Noten: 20
 Anzahl bestandener Noten: 18

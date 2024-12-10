@@ -1,7 +1,7 @@
 package aufgabe4;
 public final class Noten{
     static final double BESTE = 1.0;
-    static final double SCHLECHTESTE = 5.0;
+    static final double SCHLECHTESTE = 4.0;
 
     public static boolean istZulaessig(String note) {
         switch (note.replace(",", ".")) {
