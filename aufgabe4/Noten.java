@@ -1,5 +1,5 @@
 package aufgabe4;
-public final class Noten{
+public final class Noten {
     static final double BESTE = 1.0;
     static final double SCHLECHTESTE = 5.0;
 
@@ -13,44 +13,45 @@ public final class Noten{
         } 
     }
 
-    public static Double toDouble (String note) {
+    public static Double toDouble(String note) {
         try {
-            if(istZulaessig(note)){
+            if (istZulaessig(note)) {
                 return Double.parseDouble(note.replace(',', '.'));
-            } else{
+            } else {
                 throw new IllegalArgumentException();
-            }         
-        }
-        catch (NumberFormatException nfe) {
+            }
+        } catch (NumberFormatException nfe) {
             throw new IllegalArgumentException(nfe);
         }
     }
 
-    public static String toString (double note) {
-        if(note <= BESTE && note >= SCHLECHTESTE) {
+    public static String toString(double note) {
+        if (note <= BESTE && note >= SCHLECHTESTE) {
             return String.format("%.1f", note);
         }
         throw new IllegalArgumentException();
     }
 
     public static boolean istBestanden(double note) {
-        if (note <= SCHLECHTESTE && note >= BESTE){
+        if (note <= SCHLECHTESTE && note >= BESTE) {
             return true;
         }
         return false;
     }
 
     public static double bessere(double note1, double note2) {
-        if (note1 < note2){ 
+        if (note1 < note2) {
             return note1;
         }
         return note2;
     }
 
     public static double schlechtere(double note1, double note2) {
-        if (note1 < note2){ 
+        if (note1 < note2) {
             return note2;
         }
         return note1;
     }
+
+    private Noten() { }
 }
