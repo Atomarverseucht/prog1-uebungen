@@ -1,5 +1,4 @@
 Noten Ganze,Zehntel oder Ganze.Zehntel eingeben (Ende mit Strg-D/Strg-Z):
-Note 2,3 wird wegen Nachkommastelle ignoriert!
 Note 2-3 wird wegen Formatfehler ignoriert!
 Note 3,1 wird wegen Nachkommastelle ignoriert!
 Note 6.0 wird wegen Vorkommastelle ignoriert!
@@ -12,8 +11,8 @@ Note x.3 wird wegen Formatfehler ignoriert!
 Note 1,y wird wegen Formatfehler ignoriert!
 Note 2.y wird wegen Formatfehler ignoriert!
 
-Anzahl beruecksichtigter Noten: 5
-Anzahl bestandener Noten: 4
+Anzahl beruecksichtigter Noten: 6
+Anzahl bestandener Noten: 5
 Beste Note: 1,7
-Durchschnitt bestandener Noten: 2,9
-Durchfallquote: 20,0%
+Durchschnitt bestandener Noten: 2,7
+Durchfallquote: 16,7%

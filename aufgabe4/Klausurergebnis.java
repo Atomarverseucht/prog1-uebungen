@@ -75,7 +75,7 @@ public final class Klausurergebnis {
                 besteNote = Noten.bessere(nDouble, besteNote);
                 schlechtesteNote = Noten.schlechtere(schlechtesteNote, nDouble);
             } catch (IllegalArgumentException eae) {
-                System.out.println("Unzulaessige Note: " + note
+                System.out.println("Unzulaessige Note " + note
                     + " wird ignoriert!");
             }
         }
@@ -83,11 +83,10 @@ public final class Klausurergebnis {
         System.out.println("\nAnzahl beruecksichtigter Noten: " + anzahlNoten);
         System.out.println("Anzahl bestandener Noten: " + anzahlBestanden);
         if (anzahlNoten != 0) {
-            System.out.println("Beste Note: " + String.format(
-                    "%.1f", besteNote).replace(".", ","));
+            System.out.println("Beste Note: " + Noten.toString(besteNote));
             System.out.println("Durchschnitt bestandener Noten: "
-                + String.format("%.1f", (double)
-                    Math.round(bestandenNote * X / anzahlBestanden) / X));
+                + Noten.toString((double) Math.round(bestandenNote * X
+                    / anzahlBestanden) / X));
             System.out.println("Durchfallquote: " + String.format(
                 "%.1f", ((double) (anzahlNoten - anzahlBestanden)
                     * C / anzahlNoten)) + "%");

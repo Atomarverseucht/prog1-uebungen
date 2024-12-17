@@ -24,7 +24,7 @@ public final class Noten {
     */
     public static boolean istZulaessig(String note) {
         switch (note.replace(",", ".")) {
-        case "1.0", "1.3", "1.7", "2.0", "2.7", "3.0":
+        case "1.0", "1.3", "1.7", "2.0", "2.3", "2.7", "3.0":
         case "3.3", "3.7", "4.0", "5.0":
             return true;
         default:
@@ -57,7 +57,7 @@ public final class Noten {
     * @throws IllegalArgumentException wenn die Note nicht geht
     */
     public static String toString(double note) {
-        if (note <= BESTE && note >= SCHLECHTESTE) {
+        if (note >= BESTE && note <= SCHLECHTESTE + 1) {
             return String.format("%.1f", note);
         }
         throw new IllegalArgumentException();

@@ -1,6 +1,7 @@
 // Notenstatistik.java
 package aufgabe3;
 
+import java.util.Arrays;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -64,8 +65,10 @@ public final class Notenstatistik {
             //---------------------------------------------- Eingabe pruefen
             try {
                 double value = Double.parseDouble(note.replace(',', '.'));
+                String[] help = Double.toString(value).split(","); 
+                System.out.println(Arrays.toString(help)); 
                 switch (note.replace(",", ".")) {
-                case "1.0", "1.3", "1.7", "2.0", "2.7", "3.0":
+                case "1.0", "1.3", "1.7", "2.0", "2.3", "2.7", "3.0":
                 case "3.3", "3.7", "4.0", "5.0":
                     break;
                 case "1", "2", "3", "4", "5":
@@ -73,10 +76,10 @@ public final class Notenstatistik {
                 default:
                     if (value >= 6 || value <= 0) {
                         System.out.println("Note " + note
-                            + " wird wegen Vorkommastelle ignoriert!");
+                            + " wird wegen Vorkommastelle " + help[0] + " ignoriert!");
                     } else {
                         System.out.println("Note " + note
-                            + " wird wegen Nachkommastelle ignoriert!");
+                            + " wird wegen Nachkommastelle " + help[1] + " ignoriert!");
                     }
                     throw new Exception();
                 }
