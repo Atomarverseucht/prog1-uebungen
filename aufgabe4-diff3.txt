@@ -1,14 +1,14 @@
 2,55c2,55
-< Note 0,0 wird wegen Vorkommastelle ignoriert!
-< Note 0,1 wird wegen Vorkommastelle ignoriert!
-< Note 0,2 wird wegen Vorkommastelle ignoriert!
-< Note 0,3 wird wegen Vorkommastelle ignoriert!
-< Note 0,4 wird wegen Vorkommastelle ignoriert!
-< Note 0,5 wird wegen Vorkommastelle ignoriert!
-< Note 0,6 wird wegen Vorkommastelle ignoriert!
-< Note 0,7 wird wegen Vorkommastelle ignoriert!
-< Note 0,8 wird wegen Vorkommastelle ignoriert!
-< Note 0,9 wird wegen Vorkommastelle ignoriert!
+< Note 0,0 wird wegen Nachkommastelle ignoriert!
+< Note 0,1 wird wegen Nachkommastelle ignoriert!
+< Note 0,2 wird wegen Nachkommastelle ignoriert!
+< Note 0,3 wird wegen Nachkommastelle ignoriert!
+< Note 0,4 wird wegen Nachkommastelle ignoriert!
+< Note 0,5 wird wegen Nachkommastelle ignoriert!
+< Note 0,6 wird wegen Nachkommastelle ignoriert!
+< Note 0,7 wird wegen Nachkommastelle ignoriert!
+< Note 0,8 wird wegen Nachkommastelle ignoriert!
+< Note 0,9 wird wegen Nachkommastelle ignoriert!
 < Note 1,1 wird wegen Nachkommastelle ignoriert!
 < Note 1,2 wird wegen Nachkommastelle ignoriert!
 < Note 1,4 wird wegen Nachkommastelle ignoriert!
